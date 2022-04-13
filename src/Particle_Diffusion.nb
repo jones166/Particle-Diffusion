@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      4774,        138]
-NotebookOptionsPosition[      3766,        113]
-NotebookOutlinePosition[      4203,        130]
-CellTagsIndexPosition[      4160,        127]
+NotebookDataLength[     18931,        461]
+NotebookOptionsPosition[     17222,        426]
+NotebookOutlinePosition[     17753,        445]
+CellTagsIndexPosition[     17710,        442]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -105,15 +105,330 @@ Cell[BoxData[
  CellLabel->"Out[2]=",ExpressionUUID->"9419eedf-a654-4128-8a93-6c6b81b23970"]
 }, Open  ]],
 
-Cell["Create an example plot showing some of the calculations", "Text",
- CellChangeTimes->{{3.8588670732857623`*^9, 
-  3.858867092978797*^9}},ExpressionUUID->"6586d9a2-e167-41d6-8d54-\
-d13513b0c71d"]
+Cell["Create a list of constants", "Text",
+ CellChangeTimes->{{3.8588670732857623`*^9, 3.858867092978797*^9}, {
+  3.858868033051031*^9, 
+  3.8588680394224167`*^9}},ExpressionUUID->"6586d9a2-e167-41d6-8d54-\
+d13513b0c71d"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"k", "=", 
+   RowBox[{"8.6173*^-5", 
+    NamespaceBox["LinguisticAssistant",
+     DynamicModuleBox[{Typeset`query$$ = "eV/K", Typeset`boxes$$ = 
+      TemplateBox[{
+        InterpretationBox["\[InvisibleSpace]", 1], 
+        RowBox[{
+         "\"eV\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          "\"K\""}], "electronvolts per kelvin", 
+        FractionBox["\"Electronvolts\"", "\"Kelvins\""]}, "Quantity", 
+       SyntaxForm -> Mod], 
+      Typeset`allassumptions$$ = {{
+       "type" -> "Unit", "word" -> "eV/K", "template" -> 
+        "Assuming electronvolts per kelvin for \"eV/K\"${separator}Use \
+${desc} instead", "count" -> "2", "pulldown" -> "false", "default" -> 
+        "\"UnitClash\" -> {\"eV/K\", {\"ElectronvoltsPerKelvin\", \"dflt\"}}",
+         "Values" -> {{
+          "name" -> "ElectronvoltsPerKelvin", "desc" -> 
+           "electronvolts per kelvin", "input" -> 
+           "\"UnitClash\" -> {\"eV/K\", {\"ElectronvoltsPerKelvin\"}}"}, {
+          "name" -> "ElectronvoltsPerKelvinDifference", "desc" -> 
+           "electronvolts per kelvin difference", "input" -> 
+           "\"UnitClash\" -> {\"eV/K\", \
+{\"ElectronvoltsPerKelvinDifference\"}}"}}}}, Typeset`assumptions$$ = {}, 
+      Typeset`open$$ = {1, 2}, Typeset`querystate$$ = {
+      "Online" -> True, "Allowed" -> True, "mparse.jsp" -> 
+       1.1344758`7.50634022968999, "Messages" -> {}}}, 
+      DynamicBox[ToBoxes[
+        AlphaIntegration`LinguisticAssistantBoxes["", 4, Automatic, 
+         Dynamic[Typeset`query$$], 
+         Dynamic[Typeset`boxes$$], 
+         Dynamic[Typeset`allassumptions$$], 
+         Dynamic[Typeset`assumptions$$], 
+         Dynamic[Typeset`open$$], 
+         Dynamic[Typeset`querystate$$]], StandardForm],
+       ImageSizeCache->{102.8, {11., 17.8}},
+       TrackedSymbols:>{
+        Typeset`query$$, Typeset`boxes$$, Typeset`allassumptions$$, 
+         Typeset`assumptions$$, Typeset`open$$, Typeset`querystate$$}],
+      DynamicModuleValues:>{},
+      UndoTrackedVariables:>{Typeset`open$$}],
+     BaseStyle->{"Deploy"},
+     DeleteWithContents->True,
+     Editable->False,
+     SelectWithContents->True]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"T", "=", 
+   RowBox[{"300", 
+    NamespaceBox["LinguisticAssistant",
+     DynamicModuleBox[{Typeset`query$$ = "K", Typeset`boxes$$ = TemplateBox[{
+        InterpretationBox["\[InvisibleSpace]", 1], "\"K\"", 
+        "kelvins difference", "\"KelvinsDifference\""}, "Quantity", 
+       SyntaxForm -> Mod], 
+      Typeset`allassumptions$$ = {{
+       "type" -> "Clash", "word" -> "K", "template" -> 
+        "Assuming \"K\" is a unit${separator}Use as ${desc} or ${desc} or \
+${desc} instead", "count" -> "4", "pulldown" -> "false", "default" -> 
+        "{\"C\", \"K\"} -> {\"Unit\", \"dflt\"}", 
+        "Values" -> {{
+          "name" -> "Unit", "desc" -> "a unit", "input" -> 
+           "{\"C\", \"K\"} -> {\"Unit\"}"}, {
+          "name" -> "Element", "desc" -> "a chemical element", "input" -> 
+           "{\"C\", \"K\"} -> {\"Element\"}"}, {
+          "name" -> "Particle", "desc" -> "a particle", "input" -> 
+           "{\"C\", \"K\"} -> {\"Particle\"}"}, {
+          "name" -> "Character", "desc" -> "a character", "input" -> 
+           "{\"C\", \"K\"} -> {\"Character\"}"}}}, {
+       "type" -> "Unit", "word" -> "K", "template" -> 
+        "Assuming kelvins difference for \"K\"${separator}Use ${desc} or \
+${pulldown} instead", "count" -> "4", "pulldown" -> "true", "pulldownlabel" -> 
+        "more >>", "pulldownlength" -> "2", "default" -> 
+        "\"UnitClash\" -> {\"K\", {\"KelvinsDifference\", \"dflt\"}}", 
+        "Values" -> {{
+          "name" -> "KelvinsDifference", "desc" -> "kelvins difference", 
+           "input" -> "\"UnitClash\" -> {\"K\", {\"KelvinsDifference\"}}"}, {
+          "name" -> "Kilobytes", "desc" -> "kilobytes (base 10)", "input" -> 
+           "\"UnitClash\" -> {\"K\", {\"Kilobytes\"}}"}, {
+          "name" -> "Kilometers", "desc" -> "kilometers", "input" -> 
+           "\"UnitClash\" -> {\"K\", {\"Kilometers\"}}"}, {
+          "name" -> "Karats", "desc" -> "karats of metal purity", "input" -> 
+           "\"UnitClash\" -> {\"K\", {\"Karats\"}}"}}}}, 
+      Typeset`assumptions$$ = {"{\"C\", \"K\"} -> {\"Unit\"}"}, 
+      Typeset`open$$ = {1, 2}, Typeset`querystate$$ = {
+      "Online" -> True, "Allowed" -> True, "mparse.jsp" -> 
+       2.0384091999999999999`7.760836364267114, "Messages" -> {}}}, 
+      DynamicBox[ToBoxes[
+        AlphaIntegration`LinguisticAssistantBoxes["", 4, Automatic, 
+         Dynamic[Typeset`query$$], 
+         Dynamic[Typeset`boxes$$], 
+         Dynamic[Typeset`allassumptions$$], 
+         Dynamic[Typeset`assumptions$$], 
+         Dynamic[Typeset`open$$], 
+         Dynamic[Typeset`querystate$$]], StandardForm],
+       ImageSizeCache->{80.8, {10., 17.8}},
+       TrackedSymbols:>{
+        Typeset`query$$, Typeset`boxes$$, Typeset`allassumptions$$, 
+         Typeset`assumptions$$, Typeset`open$$, Typeset`querystate$$}],
+      DynamicModuleValues:>{},
+      UndoTrackedVariables:>{Typeset`open$$}],
+     BaseStyle->{"Deploy"},
+     DeleteWithContents->True,
+     Editable->False,
+     SelectWithContents->True]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"atom", "=", "\"\<Hydrogen\>\""}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"m", "=", 
+   RowBox[{"ElementData", "[", 
+    RowBox[{"atom", ",", "\"\<AtomicMass\>\""}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"m", "=", 
+   RowBox[{"UnitConvert", "[", 
+    RowBox[{"m", ",", "\"\<MeV/c^2\>\""}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"R", "=", 
+   RowBox[{"ElementData", "[", 
+    RowBox[{"atom", ",", "\"\<AtomicRadius\>\""}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"simR", "=", 
+   RowBox[{
+    RowBox[{"QuantityMagnitude", "[", "R", "]"}], "/", "1000"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Sigma]", "=", 
+   RowBox[{"Pi", " ", 
+    RowBox[{"R", "^", "2"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"n", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"width", "=", "1"}], ";", 
+  RowBox[{"(*", 
+   RowBox[{"Corresponds", " ", "to", " ", "um"}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"height", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{"n", ">", "objectMax"}], ",", 
+    RowBox[{"n", "=", "objectMax"}]}], "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"maxX", "=", 
+   RowBox[{"Floor", "[", 
+    RowBox[{"width", "/", 
+     RowBox[{"(", 
+      RowBox[{"2", " ", "simR"}], ")"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"maxY", "=", 
+   RowBox[{"Floor", "[", 
+    RowBox[{"height", "/", 
+     RowBox[{"(", 
+      RowBox[{"2", " ", "simR"}], ")"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"objectMax", "=", 
+   RowBox[{"maxX", " ", "maxY"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.8588673667054358`*^9, 3.858867371788509*^9}, {
+   3.858867405560193*^9, 3.8588674089834366`*^9}, {3.858867462724923*^9, 
+   3.858867486648549*^9}, {3.858867533829311*^9, 3.8588675357455277`*^9}, {
+   3.858867600004614*^9, 3.858867726206031*^9}, {3.858867917147211*^9, 
+   3.8588679394159036`*^9}, {3.8588680510486407`*^9, 
+   3.8588680592536836`*^9}, {3.8588681157337427`*^9, 
+   3.8588681263629932`*^9}, {3.8588681627297745`*^9, 
+   3.8588681677327504`*^9}, {3.8588682198352365`*^9, 3.858868228506979*^9}, {
+   3.8588683654353237`*^9, 3.8588683779294033`*^9}, {3.8588684468213453`*^9, 
+   3.858868490029476*^9}, {3.8588685230027475`*^9, 3.858868531133768*^9}, {
+   3.8588687312364435`*^9, 3.8588687438837504`*^9}, {3.8588687967937136`*^9, 
+   3.8588688289852047`*^9}, {3.8588688794142365`*^9, 
+   3.8588689654057837`*^9}, {3.8588690082540083`*^9, 3.858869008380858*^9}, {
+   3.8588690472443533`*^9, 3.858869047745919*^9}, {3.858869392397538*^9, 
+   3.858869483401599*^9}, {3.8588695871193757`*^9, 3.8588695877716675`*^9}, {
+   3.858869800846696*^9, 3.8588699163251505`*^9}, 3.858870154680781*^9, {
+   3.858870509136773*^9, 3.85887053483971*^9}, 3.858871052327323*^9, 
+   3.8588713121808715`*^9, {3.8588713710092793`*^9, 3.858871428124514*^9}},
+ CellLabel->
+  "In[558]:=",ExpressionUUID->"152c70bd-8319-4a09-8d35-95702e3fcb16"],
+
+Cell["Create an array of n elements", "Text",
+ CellChangeTimes->{{3.8588680283617363`*^9, 3.858868028957449*^9}, {
+  3.8588680672609158`*^9, 3.858868071722904*^9}, {3.8588681758957434`*^9, 
+  3.8588681790036435`*^9}},ExpressionUUID->"318599dd-822d-4a34-865f-\
+b0da814a81e3"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"rows", "=", 
+   RowBox[{"Floor", "[", 
+    RowBox[{"Sqrt", "[", "n", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"cols", "=", 
+   RowBox[{"rows", "+", "1"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"stepX", "=", 
+   RowBox[{"width", "/", 
+    RowBox[{"(", 
+     RowBox[{"cols", "+", "1"}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"stepY", "=", 
+   RowBox[{"height", "/", 
+    RowBox[{"(", 
+     RowBox[{"rows", "+", "1"}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"counterX", "=", "stepX"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"counterY", "=", "stepY"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"objectList", "=", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Do", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"objectList", "=", 
+     RowBox[{"Append", "[", 
+      RowBox[{"objectList", ",", 
+       RowBox[{"{", 
+        RowBox[{"counterX", ",", "counterY"}], "}"}]}], "]"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"counterX", "=", 
+     RowBox[{"counterX", "+", "stepX"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{"counterX", ">", 
+       RowBox[{"width", "-", "simR"}]}], ",", 
+      RowBox[{
+       RowBox[{"counterX", "=", "stepX"}], ";", 
+       RowBox[{"counterY", "=", 
+        RowBox[{"counterY", "+", "stepY"}]}]}]}], "]"}]}], ",", 
+   "\[IndentingNewLine]", "n"}], 
+  "]"}], "\[IndentingNewLine]", "objectList", "\[IndentingNewLine]", 
+ RowBox[{"Graphics", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"Black", ",", 
+       RowBox[{"Disk", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"#", "[", 
+            RowBox[{"[", "1", "]"}], "]"}], ",", 
+           RowBox[{"#", "[", 
+            RowBox[{"[", "2", "]"}], "]"}]}], "}"}], ",", "simR"}], "]"}]}], 
+      "}"}], "&"}], "/@", "objectList"}], ",", 
+   RowBox[{"PlotRange", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"0", ",", "width"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "height"}], "}"}]}], "}"}]}], ",", 
+   RowBox[{"Frame", "\[Rule]", "True"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.858868205954157*^9, 3.8588682109685884`*^9}, {
+   3.858868242779641*^9, 3.858868246836707*^9}, {3.858868293362693*^9, 
+   3.858868382635501*^9}, 3.858868750693562*^9, {3.8588688060578794`*^9, 
+   3.8588688070950184`*^9}, {3.8588690134075966`*^9, 3.858869030815649*^9}, {
+   3.85886952868794*^9, 3.8588696226284328`*^9}, {3.8588696871255236`*^9, 
+   3.8588697492850485`*^9}, {3.858869974355496*^9, 3.8588699922900815`*^9}, {
+   3.8588700418412905`*^9, 3.858870139682889*^9}, {3.8588701791767116`*^9, 
+   3.8588702205198703`*^9}, {3.858870253606736*^9, 3.8588703281148996`*^9}, {
+   3.8588705626555986`*^9, 3.8588706894522877`*^9}, {3.8588707319670296`*^9, 
+   3.858870741330265*^9}, {3.858870791314489*^9, 3.858870991339217*^9}, {
+   3.858871043538343*^9, 3.8588710440303535`*^9}, {3.858871093609243*^9, 
+   3.8588711124149923`*^9}, {3.8588712735551786`*^9, 3.858871304816064*^9}, {
+   3.8588713409907484`*^9, 3.858871361889736*^9}},
+ CellLabel->
+  "In[572]:=",ExpressionUUID->"cd5a5e81-5511-4f35-acf4-aef3cde2fc7a"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    FractionBox["1", "3"], ",", 
+    FractionBox["1", "2"]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.858870071982373*^9, {3.8588701048526382`*^9, 3.8588701399942045`*^9}, 
+   3.8588701862300186`*^9, 3.8588702209170303`*^9, 3.858870338774144*^9, {
+   3.8588705134714794`*^9, 3.8588705217477636`*^9}, {3.858870958594932*^9, 
+   3.8588709917572355`*^9}, {3.8588710444958515`*^9, 3.858871055609991*^9}, {
+   3.8588713056978917`*^9, 3.8588714301316757`*^9}},
+ CellLabel->
+  "Out[580]=",ExpressionUUID->"2167459e-de1e-493d-ba2e-73e0b9c63e16"],
+
+Cell[BoxData[
+ GraphicsBox[
+  {GrayLevel[0], 
+   DiskBox[NCache[{Rational[1, 3], Rational[1, 2]}, {0.3333333333333333, 
+     0.5}], 0.053]},
+  Frame->True,
+  PlotRange->{{0, 1}, {0, 1}}]], "Output",
+ CellChangeTimes->{
+  3.858870071982373*^9, {3.8588701048526382`*^9, 3.8588701399942045`*^9}, 
+   3.8588701862300186`*^9, 3.8588702209170303`*^9, 3.858870338774144*^9, {
+   3.8588705134714794`*^9, 3.8588705217477636`*^9}, {3.858870958594932*^9, 
+   3.8588709917572355`*^9}, {3.8588710444958515`*^9, 3.858871055609991*^9}, {
+   3.8588713056978917`*^9, 3.858871430134587*^9}},
+ CellLabel->
+  "Out[581]=",ExpressionUUID->"e3a8412a-bb60-4ac4-b91a-393e3f11e754"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.858870368157754*^9, 3.8588703787457895`*^9}, 
+   3.8588714392641125`*^9},ExpressionUUID->"5efd5958-9241-4b1d-a942-\
+08539079262e"]
 }, Open  ]]
 },
 WindowSize->{1152., 585.6},
 WindowMargins->{{
   Automatic, -5.399999999999864}, {-5.399999999999977, Automatic}},
+TaggingRules->{
+ "WelcomeScreenSettings" -> {"FEStarting" -> False}, "TryRealOnly" -> False},
 FrontEndVersion->"12.1 for Microsoft Windows (64-bit) (June 19, 2020)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"6d99f1f6-1478-4b9a-b3f7-ecd1c1545660"
@@ -138,7 +453,15 @@ Cell[CellGroupData[{
 Cell[1339, 44, 933, 26, 49, "Input",ExpressionUUID->"ab99badd-6c91-434f-a566-6747e5d892e4"],
 Cell[2275, 72, 1261, 32, 118, "Output",ExpressionUUID->"9419eedf-a654-4128-8a93-6c6b81b23970"]
 }, Open  ]],
-Cell[3551, 107, 199, 3, 35, "Text",ExpressionUUID->"6586d9a2-e167-41d6-8d54-d13513b0c71d"]
+Cell[3551, 107, 221, 4, 35, "Text",ExpressionUUID->"6586d9a2-e167-41d6-8d54-d13513b0c71d"],
+Cell[3775, 113, 8362, 180, 333, "Input",ExpressionUUID->"152c70bd-8319-4a09-8d35-95702e3fcb16"],
+Cell[12140, 295, 274, 4, 35, "Text",ExpressionUUID->"318599dd-822d-4a34-865f-b0da814a81e3"],
+Cell[CellGroupData[{
+Cell[12439, 303, 3308, 83, 263, "Input",ExpressionUUID->"cd5a5e81-5511-4f35-acf4-aef3cde2fc7a"],
+Cell[15750, 388, 603, 13, 48, "Output",ExpressionUUID->"2167459e-de1e-493d-ba2e-73e0b9c63e16"],
+Cell[16356, 403, 656, 14, 373, "Output",ExpressionUUID->"e3a8412a-bb60-4ac4-b91a-393e3f11e754"]
+}, Open  ]],
+Cell[17027, 420, 179, 3, 28, "Input",ExpressionUUID->"5efd5958-9241-4b1d-a942-08539079262e"]
 }, Open  ]]
 }
 ]
