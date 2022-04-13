@@ -10,22 +10,110 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      1114,         40]
-NotebookOptionsPosition[       759,         26]
-NotebookOutlinePosition[      1164,         42]
-CellTagsIndexPosition[      1121,         39]
+NotebookDataLength[      4774,        138]
+NotebookOptionsPosition[      3766,        113]
+NotebookOutlinePosition[      4203,        130]
+CellTagsIndexPosition[      4160,        127]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
+
+Cell[CellGroupData[{
+Cell["Particle Diffusion", "Title",
+ CellChangeTimes->{{3.8588655229978256`*^9, 
+  3.858865535611528*^9}},ExpressionUUID->"e76d2cdb-adec-4981-9235-\
+db52ed9c9000"],
+
+Cell["Michael Jones and Ian Jackson", "Author",
+ CellChangeTimes->{{3.858865543052256*^9, 
+  3.858865553692855*^9}},ExpressionUUID->"c4869ef1-dbd2-4300-9b07-\
+7170b2852407"],
+
 Cell[BoxData[
  RowBox[{"Clear", "[", "\"\<`*\>\"", "]"}]], "Input",
- CellChangeTimes->{{3.8588646496531277`*^9, 
-  3.8588646545153856`*^9}},ExpressionUUID->"ee3b8de3-e3f1-44a2-8b79-\
-4401803dbfea"]
+ CellChangeTimes->{{3.8588646496531277`*^9, 3.8588646545153856`*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"ee3b8de3-e3f1-44a2-8b79-4401803dbfea"],
+
+Cell["Start by creating a GUI window", "Text",
+ CellChangeTimes->{{3.8588655596221204`*^9, 
+  3.858865565643279*^9}},ExpressionUUID->"535c4ffa-3dcb-40ae-8aba-\
+172a39756af7"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DynamicModule", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"f", ",", "p"}], "}"}], ",", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"f", "[", "g_", "]"}], ":=", 
+     RowBox[{"Graphics", "[", 
+      RowBox[{"g", ",", 
+       RowBox[{"ImageSize", "\[Rule]", "Tiny"}]}], "]"}]}], ";", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"SetterBar", "[", 
+       RowBox[{
+        RowBox[{"Dynamic", "[", "p", "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Disk", "[", "]"}], "\[Rule]", "Disk"}], ",", 
+          RowBox[{
+           RowBox[{"Rectangle", "[", "]"}], "\[Rule]", "Rectangle"}]}], 
+         "}"}]}], "]"}], ",", 
+      RowBox[{"Dynamic", "[", 
+       RowBox[{"f", "[", "p", "]"}], "]"}]}], "}"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.858866656942376*^9, 3.858866656950677*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"ab99badd-6c91-434f-a566-6747e5d892e4"],
+
+Cell[BoxData[
+ DynamicModuleBox[{$CellContext`f$$, $CellContext`p$$ = Rectangle[{0, 0}]}, 
+  RowBox[{"{", 
+   RowBox[{
+    InterpretationBox[
+     StyleBox[GridBox[{
+        {
+         SetterBox[Dynamic[$CellContext`p$$], {Disk[{0, 0}]}, "Disk"], 
+         SetterBox[Dynamic[$CellContext`p$$], {Rectangle[{0, 0}]}, 
+          "Rectangle"]}
+       },
+       BaselinePosition->{1, 1},
+       GridBoxSpacings->{"Columns" -> {
+           Offset[0.27999999999999997`], {
+            Offset[0.]}, 
+           Offset[0.27999999999999997`]}, "Rows" -> {
+           Offset[0.2], {
+            Offset[0.4]}, 
+           Offset[0.2]}}],
+      Deployed->True],
+     SetterBar[
+      Dynamic[$CellContext`p$$], {
+      Disk[{0, 0}] -> Disk, Rectangle[{0, 0}] -> Rectangle}]], ",", 
+    DynamicBox[ToBoxes[
+      $CellContext`f$$[$CellContext`p$$], StandardForm],
+     ImageSizeCache->{100., {47., 52.84000000000002}}]}], "}"}],
+  DynamicModuleValues:>{{DownValues[$CellContext`f$$] = {HoldPattern[
+         $CellContext`f$$[
+          Pattern[$CellContext`g, 
+           Blank[]]]] :> 
+       Graphics[$CellContext`g, ImageSize -> Tiny]}}}]], "Output",
+ CellChangeTimes->{3.8588667000816402`*^9},
+ CellLabel->"Out[2]=",ExpressionUUID->"9419eedf-a654-4128-8a93-6c6b81b23970"]
+}, Open  ]],
+
+Cell["Create an example plot showing some of the calculations", "Text",
+ CellChangeTimes->{{3.8588670732857623`*^9, 
+  3.858867092978797*^9}},ExpressionUUID->"6586d9a2-e167-41d6-8d54-\
+d13513b0c71d"]
+}, Open  ]]
 },
-WindowSize->{571.8, 524.4},
-WindowMargins->{{284.4, Automatic}, {18, Automatic}},
+WindowSize->{1152., 585.6},
+WindowMargins->{{
+  Automatic, -5.399999999999864}, {-5.399999999999977, Automatic}},
 FrontEndVersion->"12.1 for Microsoft Windows (64-bit) (June 19, 2020)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"6d99f1f6-1478-4b9a-b3f7-ecd1c1545660"
@@ -41,10 +129,18 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 197, 4, 28, "Input",ExpressionUUID->"ee3b8de3-e3f1-44a2-8b79-4401803dbfea"]
+Cell[CellGroupData[{
+Cell[580, 22, 163, 3, 97, "Title",ExpressionUUID->"e76d2cdb-adec-4981-9235-db52ed9c9000"],
+Cell[746, 27, 173, 3, 31, "Author",ExpressionUUID->"c4869ef1-dbd2-4300-9b07-7170b2852407"],
+Cell[922, 32, 215, 3, 28, "Input",ExpressionUUID->"ee3b8de3-e3f1-44a2-8b79-4401803dbfea"],
+Cell[1140, 37, 174, 3, 35, "Text",ExpressionUUID->"535c4ffa-3dcb-40ae-8aba-172a39756af7"],
+Cell[CellGroupData[{
+Cell[1339, 44, 933, 26, 49, "Input",ExpressionUUID->"ab99badd-6c91-434f-a566-6747e5d892e4"],
+Cell[2275, 72, 1261, 32, 118, "Output",ExpressionUUID->"9419eedf-a654-4128-8a93-6c6b81b23970"]
+}, Open  ]],
+Cell[3551, 107, 199, 3, 35, "Text",ExpressionUUID->"6586d9a2-e167-41d6-8d54-d13513b0c71d"]
+}, Open  ]]
 }
 ]
 *)
-
-(* End of internal cache information *)
 
