@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     13071,        313]
-NotebookOptionsPosition[     11817,        283]
-NotebookOutlinePosition[     12218,        299]
-CellTagsIndexPosition[     12175,        296]
+NotebookDataLength[     15643,        362]
+NotebookOptionsPosition[     14102,        329]
+NotebookOutlinePosition[     14503,        345]
+CellTagsIndexPosition[     14460,        342]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -43,8 +43,13 @@ Cell[BoxData[
     RowBox[{"accordingly", ".", " ", "It"}], " ", "is", " ", "defined", " ", 
     "and", " ", "tested", " ", 
     RowBox[{"below", "."}]}], "*)"}], "\[IndentingNewLine]", 
-  "\[IndentingNewLine]", 
   RowBox[{
+   RowBox[{
+    RowBox[{"globalvars", "=", 
+     RowBox[{"{", 
+      RowBox[{
+      "a_", ",", "numAtoms_", ",", "numCollisions_", ",", "w_", ",", "l_", 
+       ",", "h_"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"graphUI", "[", 
      RowBox[{"diffusion_", ",", "listvars_"}], "]"}], ":=", 
@@ -55,9 +60,28 @@ Cell[BoxData[
       "\[IndentingNewLine]", 
       RowBox[{"Manipulate", "[", 
        RowBox[{
-        RowBox[{"diffusion", "[", "listvars", "]"}], ",", 
+        RowBox[{"diffusion", "[", "globalvars", "]"}], ",", 
         RowBox[{"{", "listvars", "}"}]}], "]"}]}], "\[IndentingNewLine]", 
      "]"}]}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "For", " ", "\"\<drawpath2D\>\"", " ", "and", " ", "\"\<drawpath3D\>\"", 
+     " ", "it", " ", "will", " ", "be", " ", "easiest", " ", "for", " ", "me",
+      " ", "to", " ", "make", " ", "a", " ", "UI", " ", "if", " ", "the", " ",
+      "functions", " ", "use", " ", "a", " ", "list", " ", "of", " ", 
+     "variables", " ", "rather", " ", "than", " ", "the", " ", "bare", " ", 
+     RowBox[{"variables", ".", " ", "See"}], " ", "example", " ", 
+     RowBox[{"below", "."}]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"globalvars", "=", 
+     RowBox[{"{", 
+      RowBox[{
+      "a_", ",", "numAtoms_", ",", "numCollisions_", ",", "w_", ",", "l_", 
+       ",", "h_"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+   "\"\<drawpath[a,b,c,d] <---- That's hard to deal with\>\"", 
+   "\[IndentingNewLine]", 
+   "\"\<drawpath[{a,b,c,d}] <---- That's easy to deal with\>\"", 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
    RowBox[{"(*", 
     RowBox[{
      RowBox[{
@@ -73,26 +97,50 @@ Cell[BoxData[
       " ", 
       RowBox[{"graphUI", ".", " ", "Hopefully", "."}]}]}], "*)"}], 
    "\[IndentingNewLine]", 
-   "\"\<{diffusion, listvars} <-- These are the passed vars currently\>\"", 
+   "\"\<{atom, num_atoms, num_collisions, width, length, height} <-- These \
+are the vars that the graph takes into account\>\"", "\[IndentingNewLine]", 
    "\[IndentingNewLine]", 
-   "\"\<{diffusionFunction, {{min1,max1},{min2,max2}} } <-- These will be the \
-eventual passed vars into graphUI\>\""}]}]], "Input",
+   "\"\<{diffusion, listvars} <-- These are the passed vars through graphUI \
+currently\>\"", "\[IndentingNewLine]", 
+   "\"\<{diffusionFunction, \
+{{num_atoms_Min,num_atoms_Max},{num_col_Min,num_col_Min}...} } <-- These will \
+be the eventual passed vars into graphUI; it will be everything graphUI uses \
+except for the category of atom.\>\""}]}]], "Input",
  CellChangeTimes->{{3.8588793913648276`*^9, 3.8588794391102753`*^9}, {
   3.8588795223696003`*^9, 3.8588796614508796`*^9}, {3.858880235758644*^9, 
   3.8588804192850623`*^9}, {3.8588804844360833`*^9, 3.8588806297896967`*^9}, {
   3.858880701602536*^9, 3.8588807151723576`*^9}, {3.8588808262577543`*^9, 
-  3.8588808270751767`*^9}, {3.858881034508006*^9, 3.8588812567077613`*^9}},
- CellLabel->"In[18]:=",ExpressionUUID->"2d5e39e4-5df1-42f0-b6d7-60c75cd1e4ac"],
+  3.8588808270751767`*^9}, {3.858881034508006*^9, 3.8588812567077613`*^9}, {
+  3.858881913926629*^9, 3.8588820148435946`*^9}, {3.858882178731501*^9, 
+  3.858882287036497*^9}, {3.858882323862833*^9, 3.858882453591954*^9}},
+ CellLabel->"In[38]:=",ExpressionUUID->"2d5e39e4-5df1-42f0-b6d7-60c75cd1e4ac"],
 
-Cell[BoxData["\<\"{diffusion, listvars} <-- These are the passed vars \
-currently\"\>"], "Output",
- CellChangeTimes->{3.8588812571521387`*^9},
- CellLabel->"Out[19]=",ExpressionUUID->"ccf92174-4a40-4724-ac69-8dee4dc49868"],
+Cell[BoxData["\<\"drawpath[a,b,c,d] <---- That's hard to deal with\"\>"], \
+"Output",
+ CellChangeTimes->{3.8588824549456367`*^9},
+ CellLabel->"Out[41]=",ExpressionUUID->"ea309411-328b-4655-a7da-5e0f63d760f2"],
 
-Cell[BoxData["\<\"{diffusionFunction, {{min1,max1},{min2,max2}} } <-- These \
-will be the eventual passed vars into graphUI\"\>"], "Output",
- CellChangeTimes->{3.8588812571577272`*^9},
- CellLabel->"Out[20]=",ExpressionUUID->"137f9b58-bbc5-4924-8a6b-d5029a182a58"]
+Cell[BoxData["\<\"drawpath[{a,b,c,d}] <---- That's easy to deal with\"\>"], \
+"Output",
+ CellChangeTimes->{3.858882454949626*^9},
+ CellLabel->"Out[42]=",ExpressionUUID->"d76cc555-651e-4ae1-ab4d-fb5402046ae4"],
+
+Cell[BoxData["\<\"{atom, num_atoms, num_collisions, width, length, height} \
+<-- These are the vars that the graph takes into account\"\>"], "Output",
+ CellChangeTimes->{3.858882454951688*^9},
+ CellLabel->"Out[43]=",ExpressionUUID->"646414a0-5059-4499-a7e3-1e323ce61759"],
+
+Cell[BoxData["\<\"{diffusion, listvars} <-- These are the passed vars through \
+graphUI currently\"\>"], "Output",
+ CellChangeTimes->{3.858882454954614*^9},
+ CellLabel->"Out[44]=",ExpressionUUID->"c825cc2c-8144-4f49-8e48-3c1cde32cd91"],
+
+Cell[BoxData["\<\"{diffusionFunction, \
+{{num_atoms_Min,num_atoms_Max},{num_col_Min,num_col_Min}...} } <-- These will \
+be the eventual passed vars into graphUI; it will be everything graphUI uses \
+except for the category of atom.\"\>"], "Output",
+ CellChangeTimes->{3.858882454956917*^9},
+ CellLabel->"Out[45]=",ExpressionUUID->"61174e02-ca53-47b4-9c46-0a50b901288c"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -147,17 +195,15 @@ Cell[BoxData[
        RowBox[{"x", "*", "y", "*", "z"}], ",", 
        RowBox[{"{", 
         RowBox[{"x", ",", "0", ",", "5"}], "}"}]}], "]"}]}], ";"}], 
-   "\[IndentingNewLine]", "\[IndentingNewLine]", 
-   RowBox[{"graphUI", "[", 
-    RowBox[{"multivarf", ",", 
-     RowBox[{"{", 
-      RowBox[{"newx", ",", "newy", ",", "newz"}], "}"}]}], "]"}]}]}]], "Input",
+   "\[IndentingNewLine]"}]}]], "Input",
  CellChangeTimes->{{3.8588793913648276`*^9, 3.8588794391102753`*^9}, {
   3.8588795223696003`*^9, 3.8588796614508796`*^9}, {3.858880235758644*^9, 
   3.8588804192850623`*^9}, {3.8588804844360833`*^9, 3.858880662871171*^9}, {
   3.858880717392785*^9, 3.8588808220106463`*^9}, {3.8588811044666967`*^9, 
-  3.858881104676132*^9}, {3.858881262172748*^9, 3.858881267387314*^9}},
- CellLabel->"In[21]:=",ExpressionUUID->"50d2f76b-05c8-4bc6-a3ac-0841dde8cba0"],
+  3.858881104676132*^9}, {3.858881262172748*^9, 3.858881267387314*^9}, {
+  3.8588821578431206`*^9, 
+  3.858882158216649*^9}},ExpressionUUID->"50d2f76b-05c8-4bc6-a3ac-\
+0841dde8cba0"],
 
 Cell[BoxData[
  TagBox[
@@ -301,18 +347,21 @@ Notebook[{
 Cell[CellGroupData[{
 Cell[580, 22, 271, 6, 85, "Subtitle",ExpressionUUID->"90ca5ff2-6195-48f1-abf9-032cc37ebdce"],
 Cell[CellGroupData[{
-Cell[876, 32, 2521, 52, 224, "Input",ExpressionUUID->"2d5e39e4-5df1-42f0-b6d7-60c75cd1e4ac"],
-Cell[3400, 86, 221, 3, 32, "Output",ExpressionUUID->"ccf92174-4a40-4724-ac69-8dee4dc49868"],
-Cell[3624, 91, 263, 3, 32, "Output",ExpressionUUID->"137f9b58-bbc5-4924-8a6b-d5029a182a58"]
+Cell[876, 32, 4126, 83, 400, "Input",ExpressionUUID->"2d5e39e4-5df1-42f0-b6d7-60c75cd1e4ac"],
+Cell[5005, 117, 208, 3, 32, "Output",ExpressionUUID->"ea309411-328b-4655-a7da-5e0f63d760f2"],
+Cell[5216, 122, 208, 3, 32, "Output",ExpressionUUID->"d76cc555-651e-4ae1-ab4d-fb5402046ae4"],
+Cell[5427, 127, 271, 3, 32, "Output",ExpressionUUID->"646414a0-5059-4499-a7e3-1e323ce61759"],
+Cell[5701, 132, 235, 3, 32, "Output",ExpressionUUID->"c825cc2c-8144-4f49-8e48-3c1cde32cd91"],
+Cell[5939, 137, 369, 5, 77, "Output",ExpressionUUID->"61174e02-ca53-47b4-9c46-0a50b901288c"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3924, 99, 2428, 60, 263, "Input",ExpressionUUID->"50d2f76b-05c8-4bc6-a3ac-0841dde8cba0"],
-Cell[6355, 161, 1637, 33, 303, "Output",ExpressionUUID->"174a2d47-46a5-433c-8933-a4995a2203e5"],
-Cell[7995, 196, 305, 6, 55, "Output",ExpressionUUID->"62e73a5c-253b-4acf-96fb-ece1095881ed"]
+Cell[6345, 147, 2292, 58, 244, "Input",ExpressionUUID->"50d2f76b-05c8-4bc6-a3ac-0841dde8cba0"],
+Cell[8640, 207, 1637, 33, 303, "Output",ExpressionUUID->"174a2d47-46a5-433c-8933-a4995a2203e5"],
+Cell[10280, 242, 305, 6, 32, "Output",ExpressionUUID->"62e73a5c-253b-4acf-96fb-ece1095881ed"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[8337, 207, 1724, 35, 91, InheritFromParent,ExpressionUUID->"1f50b525-6e9c-40b0-a943-12c4caea496c"],
-Cell[10064, 244, 1725, 35, 95, "Output",ExpressionUUID->"082066ae-1a6c-42bb-a9c2-766d99b2e314"]
+Cell[10622, 253, 1724, 35, 91, InheritFromParent,ExpressionUUID->"1f50b525-6e9c-40b0-a943-12c4caea496c"],
+Cell[12349, 290, 1725, 35, 95, "Output",ExpressionUUID->"082066ae-1a6c-42bb-a9c2-766d99b2e314"]
 }, Open  ]]
 }, Open  ]]
 }
