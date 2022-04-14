@@ -1,3 +1,4 @@
 1. Finish git tutorial
 2. Begin coding for the overall plot
 3. Incorporate a simple GUI
+4. Finalize the experimental data and compare to expected
