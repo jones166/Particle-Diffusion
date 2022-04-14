@@ -1,4 +1,5 @@
 1. Finish git tutorial
 2. Begin coding for the overall plot
 3. Incorporate a simple GUI
-4. Finalize the experimental data and compare to expected
+4. Make a merge conflict
+5. Try the merge again
