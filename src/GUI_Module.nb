@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     15643,        362]
-NotebookOptionsPosition[     14102,        329]
-NotebookOutlinePosition[     14503,        345]
-CellTagsIndexPosition[     14460,        342]
+NotebookDataLength[     16281,        379]
+NotebookOptionsPosition[     14692,        347]
+NotebookOutlinePosition[     15093,        363]
+CellTagsIndexPosition[     15050,        360]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -45,7 +45,7 @@ Cell[BoxData[
     RowBox[{"below", "."}]}], "*)"}], "\[IndentingNewLine]", 
   RowBox[{
    RowBox[{
-    RowBox[{"globalvars", "=", 
+    RowBox[{"newglobalvars", "=", 
      RowBox[{"{", 
       RowBox[{
       "a_", ",", "numAtoms_", ",", "numCollisions_", ",", "w_", ",", "l_", 
@@ -57,27 +57,31 @@ Cell[BoxData[
      RowBox[{
       RowBox[{"{", 
        RowBox[{"copyvars", "=", "listvars"}], "}"}], ",", 
+      RowBox[{"(*", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"copyvar1", ",", "copyvar2"}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"copyvar1", "=", 
+          RowBox[{"copyvars", "[", 
+           RowBox[{"[", "1", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+         RowBox[{"copyvar2", "=", 
+          RowBox[{"copyvars", "[", 
+           RowBox[{"[", "2", "]"}], "]"}]}], ";"}]}], "*)"}], 
       "\[IndentingNewLine]", 
       RowBox[{"Manipulate", "[", 
        RowBox[{
         RowBox[{"diffusion", "[", "globalvars", "]"}], ",", 
-        RowBox[{"{", "listvars", "}"}]}], "]"}]}], "\[IndentingNewLine]", 
-     "]"}]}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
-   RowBox[{"(*", 
-    RowBox[{
-    "For", " ", "\"\<drawpath2D\>\"", " ", "and", " ", "\"\<drawpath3D\>\"", 
-     " ", "it", " ", "will", " ", "be", " ", "easiest", " ", "for", " ", "me",
-      " ", "to", " ", "make", " ", "a", " ", "UI", " ", "if", " ", "the", " ",
-      "functions", " ", "use", " ", "a", " ", "list", " ", "of", " ", 
-     "variables", " ", "rather", " ", "than", " ", "the", " ", "bare", " ", 
-     RowBox[{"variables", ".", " ", "See"}], " ", "example", " ", 
-     RowBox[{"below", "."}]}], "*)"}], "\[IndentingNewLine]", 
-   RowBox[{
-    RowBox[{"globalvars", "=", 
-     RowBox[{"{", 
-      RowBox[{
-      "a_", ",", "numAtoms_", ",", "numCollisions_", ",", "w_", ",", "l_", 
-       ",", "h_"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{"y", ",", "0", ",", "5"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"z", ",", "0", ",", "5"}], "}"}]}], "]"}]}], 
+     "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   "\"\<For drawpath2D[] and drawpath3D[] it will be easiest for me to make a \
+UI if the functions use a list of variables rather than the bare variables. \
+See example below.\>\"", "\[IndentingNewLine]", 
    "\"\<drawpath[a,b,c,d] <---- That's hard to deal with\>\"", 
    "\[IndentingNewLine]", 
    "\"\<drawpath[{a,b,c,d}] <---- That's easy to deal with\>\"", 
@@ -96,68 +100,105 @@ Cell[BoxData[
       "manipulable", " ", "will", " ", "be", " ", "passed", " ", "through", 
       " ", 
       RowBox[{"graphUI", ".", " ", "Hopefully", "."}]}]}], "*)"}], 
+   "\[IndentingNewLine]", "\"\<-----------------\n-----------------\>\"", 
    "\[IndentingNewLine]", 
    "\"\<{atom, num_atoms, num_collisions, width, length, height} <-- These \
-are the vars that the graph takes into account\>\"", "\[IndentingNewLine]", 
-   "\[IndentingNewLine]", 
+are the vars that drawpath[] functions take into account\>\"", 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
    "\"\<{diffusion, listvars} <-- These are the passed vars through graphUI \
 currently\>\"", "\[IndentingNewLine]", 
    "\"\<{diffusionFunction, \
 {{num_atoms_Min,num_atoms_Max},{num_col_Min,num_col_Min}...} } <-- These will \
-be the eventual passed vars into graphUI; it will be everything graphUI uses \
-except for the category of atom.\>\""}]}]], "Input",
+be the eventual passed vars into graphUI; it will be everything graphUI \
+manipulates except for the category of atom.\>\""}]}]], "Input",
  CellChangeTimes->{{3.8588793913648276`*^9, 3.8588794391102753`*^9}, {
   3.8588795223696003`*^9, 3.8588796614508796`*^9}, {3.858880235758644*^9, 
   3.8588804192850623`*^9}, {3.8588804844360833`*^9, 3.8588806297896967`*^9}, {
   3.858880701602536*^9, 3.8588807151723576`*^9}, {3.8588808262577543`*^9, 
   3.8588808270751767`*^9}, {3.858881034508006*^9, 3.8588812567077613`*^9}, {
   3.858881913926629*^9, 3.8588820148435946`*^9}, {3.858882178731501*^9, 
-  3.858882287036497*^9}, {3.858882323862833*^9, 3.858882453591954*^9}},
- CellLabel->"In[38]:=",ExpressionUUID->"2d5e39e4-5df1-42f0-b6d7-60c75cd1e4ac"],
+  3.858882287036497*^9}, {3.858882323862833*^9, 3.858882453591954*^9}, {
+  3.858882528537709*^9, 3.8588826155361557`*^9}, {3.858882999292303*^9, 
+  3.8588830013237705`*^9}, {3.858883128285366*^9, 3.8588831321649694`*^9}, {
+  3.8588833542217817`*^9, 3.858883443681155*^9}, {3.8588835083776965`*^9, 
+  3.8588835094640446`*^9}, {3.8588835508871236`*^9, 3.858883558717698*^9}},
+ CellLabel->
+  "In[166]:=",ExpressionUUID->"2d5e39e4-5df1-42f0-b6d7-60c75cd1e4ac"],
+
+Cell[BoxData["\<\"For drawpath2D[] and drawpath3D[] it will be easiest for me \
+to make a UI if the functions use a list of variables rather than the bare \
+variables. See example below.\"\>"], "Output",
+ CellChangeTimes->{3.858883077644583*^9, 3.8588831332998543`*^9, 
+  3.8588833991664906`*^9, 3.8588834442229385`*^9, 3.8588835100080433`*^9, 
+  3.8588835616865487`*^9},
+ CellLabel->
+  "Out[168]=",ExpressionUUID->"1cafacaa-ec4a-446b-b548-8ef0221f14bf"],
 
 Cell[BoxData["\<\"drawpath[a,b,c,d] <---- That's hard to deal with\"\>"], \
 "Output",
- CellChangeTimes->{3.8588824549456367`*^9},
- CellLabel->"Out[41]=",ExpressionUUID->"ea309411-328b-4655-a7da-5e0f63d760f2"],
+ CellChangeTimes->{3.858883077644583*^9, 3.8588831332998543`*^9, 
+  3.8588833991664906`*^9, 3.8588834442229385`*^9, 3.8588835100080433`*^9, 
+  3.8588835616925325`*^9},
+ CellLabel->
+  "Out[169]=",ExpressionUUID->"09bd8f36-a510-41dc-92ae-a861e0f9aef1"],
 
 Cell[BoxData["\<\"drawpath[{a,b,c,d}] <---- That's easy to deal with\"\>"], \
 "Output",
- CellChangeTimes->{3.858882454949626*^9},
- CellLabel->"Out[42]=",ExpressionUUID->"d76cc555-651e-4ae1-ab4d-fb5402046ae4"],
+ CellChangeTimes->{3.858883077644583*^9, 3.8588831332998543`*^9, 
+  3.8588833991664906`*^9, 3.8588834442229385`*^9, 3.8588835100080433`*^9, 
+  3.8588835616945286`*^9},
+ CellLabel->
+  "Out[170]=",ExpressionUUID->"5d0db874-48c4-4aeb-bb97-b07210e3642d"],
+
+Cell[BoxData["\<\"-----------------\\n-----------------\"\>"], "Output",
+ CellChangeTimes->{3.858883077644583*^9, 3.8588831332998543`*^9, 
+  3.8588833991664906`*^9, 3.8588834442229385`*^9, 3.8588835100080433`*^9, 
+  3.8588835616965237`*^9},
+ CellLabel->
+  "Out[171]=",ExpressionUUID->"378f556f-fbba-4342-8793-0458c80a6d07"],
 
 Cell[BoxData["\<\"{atom, num_atoms, num_collisions, width, length, height} \
-<-- These are the vars that the graph takes into account\"\>"], "Output",
- CellChangeTimes->{3.858882454951688*^9},
- CellLabel->"Out[43]=",ExpressionUUID->"646414a0-5059-4499-a7e3-1e323ce61759"],
+<-- These are the vars that drawpath[] functions take into account\"\>"], \
+"Output",
+ CellChangeTimes->{3.858883077644583*^9, 3.8588831332998543`*^9, 
+  3.8588833991664906`*^9, 3.8588834442229385`*^9, 3.8588835100080433`*^9, 
+  3.858883561698532*^9},
+ CellLabel->
+  "Out[172]=",ExpressionUUID->"b73e25ae-7049-4533-bc35-f7b3d63af0af"],
 
 Cell[BoxData["\<\"{diffusion, listvars} <-- These are the passed vars through \
 graphUI currently\"\>"], "Output",
- CellChangeTimes->{3.858882454954614*^9},
- CellLabel->"Out[44]=",ExpressionUUID->"c825cc2c-8144-4f49-8e48-3c1cde32cd91"],
+ CellChangeTimes->{3.858883077644583*^9, 3.8588831332998543`*^9, 
+  3.8588833991664906`*^9, 3.8588834442229385`*^9, 3.8588835100080433`*^9, 
+  3.8588835617005115`*^9},
+ CellLabel->
+  "Out[173]=",ExpressionUUID->"6f4c2321-7e72-4cd4-93cf-e62d86fa1c22"],
 
 Cell[BoxData["\<\"{diffusionFunction, \
 {{num_atoms_Min,num_atoms_Max},{num_col_Min,num_col_Min}...} } <-- These will \
-be the eventual passed vars into graphUI; it will be everything graphUI uses \
-except for the category of atom.\"\>"], "Output",
- CellChangeTimes->{3.858882454956917*^9},
- CellLabel->"Out[45]=",ExpressionUUID->"61174e02-ca53-47b4-9c46-0a50b901288c"]
+be the eventual passed vars into graphUI; it will be everything graphUI \
+manipulates except for the category of atom.\"\>"], "Output",
+ CellChangeTimes->{3.858883077644583*^9, 3.8588831332998543`*^9, 
+  3.8588833991664906`*^9, 3.8588834442229385`*^9, 3.8588835100080433`*^9, 
+  3.8588835617025075`*^9},
+ CellLabel->
+  "Out[174]=",ExpressionUUID->"c40c9d56-e77c-4867-961a-f3e8e6486af9"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"\[IndentingNewLine]", "\[IndentingNewLine]", 
-  RowBox[{
-   RowBox[{"Clear", "[", "\"\<`*\>\"", "]"}], "\[IndentingNewLine]", 
-   RowBox[{"(*", 
+ RowBox[{"\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
     RowBox[{
-     RowBox[{
-     "Below", " ", "is", " ", "just", " ", "me", " ", "playing", " ", "with", 
-      " ", "the", " ", "functions", " ", "to", " ", "understand", " ", "them",
-       " ", "better"}], ";", " ", 
-     RowBox[{
-     "these", " ", "will", " ", "be", " ", "deleted", " ", "as", " ", 
-      "commits", " ", "go", " ", "on"}]}], "*)"}], "\[IndentingNewLine]", 
+    "Below", " ", "is", " ", "just", " ", "me", " ", "playing", " ", "with", 
+     " ", "the", " ", "functions", " ", "to", " ", "understand", " ", "them", 
+     " ", "better"}], ";", " ", 
+    RowBox[{
+    "these", " ", "will", " ", "be", " ", "deleted", " ", "as", " ", 
+     "commits", " ", "go", " ", "on"}]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
    RowBox[{
     RowBox[{
      RowBox[{"examplefunc", "[", "f_", "]"}], ":=", 
@@ -174,59 +215,96 @@ Cell[BoxData[
    RowBox[{
     RowBox[{"examplefunc", "[", "newf", "]"}], ";"}], "\[IndentingNewLine]", 
    "\[IndentingNewLine]", 
-   RowBox[{"Manipulate", "[", 
-    RowBox[{
-     RowBox[{"Plot", "[", 
-      RowBox[{
-       RowBox[{"Sin", "[", 
-        RowBox[{"x", "*", "t"}], "]"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"t", ",", 
-         RowBox[{"-", "4"}], ",", "4"}], "}"}]}], "]"}], ",", 
-     RowBox[{"{", 
-      RowBox[{"x", ",", "0", ",", "5"}], "}"}]}], "]"}], 
+   RowBox[{
+    RowBox[{"Manipulate", "[", 
+     RowBox[{
+      RowBox[{"Plot", "[", 
+       RowBox[{
+        RowBox[{"Sin", "[", 
+         RowBox[{"x", "*", "t"}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"t", ",", 
+          RowBox[{"-", "4"}], ",", "4"}], "}"}]}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"x", ",", "0", ",", "5"}], "}"}]}], "]"}], ";"}], 
    "\[IndentingNewLine]", "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{
      RowBox[{"multivarf", "[", 
-      RowBox[{"x_", ",", "y_", ",", "z_"}], "]"}], ":=", 
+      RowBox[{"{", 
+       RowBox[{"x_", ",", "y_", ",", "z_"}], "}"}], "]"}], "=", 
      RowBox[{"Plot", "[", 
-      RowBox[{
-       RowBox[{"x", "*", "y", "*", "z"}], ",", 
+      RowBox[{"x", ",", 
        RowBox[{"{", 
         RowBox[{"x", ",", "0", ",", "5"}], "}"}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"multivarf", "[", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "3", ",", "4"}], "}"}], "]"}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"globalvars", "=", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"graphUI", "[", 
+    RowBox[{"multivarf", ",", "3"}], "]"}], "\[IndentingNewLine]", 
+   RowBox[{"phlist", "=", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "2", ",", "3"}], "}"}], "[", 
+     RowBox[{"[", "1", "]"}], "]"}]}], "\[IndentingNewLine]", 
+   RowBox[{"phlist2", "=", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"1", ",", "2"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"3", ",", "4"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"4", ",", "5"}], "}"}]}], "}"}], "[", 
+     RowBox[{"[", "3", "]"}], "]"}]}], "\[IndentingNewLine]", 
    "\[IndentingNewLine]"}]}]], "Input",
  CellChangeTimes->{{3.8588793913648276`*^9, 3.8588794391102753`*^9}, {
-  3.8588795223696003`*^9, 3.8588796614508796`*^9}, {3.858880235758644*^9, 
-  3.8588804192850623`*^9}, {3.8588804844360833`*^9, 3.858880662871171*^9}, {
-  3.858880717392785*^9, 3.8588808220106463`*^9}, {3.8588811044666967`*^9, 
-  3.858881104676132*^9}, {3.858881262172748*^9, 3.858881267387314*^9}, {
-  3.8588821578431206`*^9, 
-  3.858882158216649*^9}},ExpressionUUID->"50d2f76b-05c8-4bc6-a3ac-\
-0841dde8cba0"],
+   3.8588795223696003`*^9, 3.8588796614508796`*^9}, {3.858880235758644*^9, 
+   3.8588804192850623`*^9}, {3.8588804844360833`*^9, 3.858880662871171*^9}, {
+   3.858880717392785*^9, 3.8588808220106463`*^9}, {3.8588811044666967`*^9, 
+   3.858881104676132*^9}, {3.858881262172748*^9, 3.858881267387314*^9}, {
+   3.8588821578431206`*^9, 3.858882158216649*^9}, 3.8588826458721504`*^9, {
+   3.858882699449205*^9, 3.8588828430457196`*^9}, {3.858883156503055*^9, 
+   3.8588831769734955`*^9}, {3.8588833200730247`*^9, 3.858883343417226*^9}, {
+   3.858883572282056*^9, 3.858883580037411*^9}, {3.8588837173757753`*^9, 
+   3.85888372479906*^9}},
+ CellLabel->
+  "In[215]:=",ExpressionUUID->"50d2f76b-05c8-4bc6-a3ac-0841dde8cba0"],
 
 Cell[BoxData[
  TagBox[
   StyleBox[
-   DynamicModuleBox[{$CellContext`x$$ = 0, Typeset`show$$ = True, 
+   DynamicModuleBox[{$CellContext`y$$ = 
+    2.3000000000000003`, $CellContext`z$$ = 3.33, Typeset`show$$ = True, 
     Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
     Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
     "\"untitled\"", Typeset`specs$$ = {{
-      Hold[$CellContext`x$$], 0, 5}}, Typeset`size$$ = {
-    360., {109., 113.87420196121224`}}, Typeset`update$$ = 0, 
+      Hold[$CellContext`y$$], 0, 5}, {
+      Hold[$CellContext`z$$], 0, 5}}, Typeset`size$$ = {
+    360., {110., 115.2491293648813}}, Typeset`update$$ = 0, 
     Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
     DynamicBox[Manipulate`ManipulateBoxes[
-     1, StandardForm, "Variables" :> {$CellContext`x$$ = 0}, 
+     1, StandardForm, 
+      "Variables" :> {$CellContext`y$$ = 0, $CellContext`z$$ = 0}, 
       "ControllerVariables" :> {}, 
       "OtherVariables" :> {
        Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
         Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
         Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
-         Typeset`skipInitDone$$}, "Body" :> Plot[
-        Sin[$CellContext`x$$ $CellContext`t], {$CellContext`t, -4, 4}], 
-      "Specifications" :> {{$CellContext`x$$, 0, 5}}, "Options" :> {}, 
-      "DefaultOptions" :> {}],
-     ImageSizeCache->{631., {139., 145.}},
+         Typeset`skipInitDone$$}, 
+      "Body" :> $CellContext`multivarf[$CellContext`globalvars], 
+      "Specifications" :> {{$CellContext`y$$, 0, 5}, {$CellContext`z$$, 0, 
+         5}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{631., {140., 146.}},
      SingleEvaluation->True],
     Deinitialization:>None,
     DynamicModuleValues:>{},
@@ -237,93 +315,33 @@ Cell[BoxData[
    Deployed->True,
    StripOnInput->False],
   Manipulate`InterpretManipulate[1]]], "Output",
- CellChangeTimes->{3.8588808344825277`*^9, 3.8588812679207144`*^9},
- CellLabel->"Out[25]=",ExpressionUUID->"174a2d47-46a5-433c-8933-a4995a2203e5"],
+ CellChangeTimes->{
+  3.858883077809939*^9, {3.858883135358399*^9, 3.858883178185755*^9}, {
+   3.8588833306073875`*^9, 3.8588833437254114`*^9}, 3.8588834023420444`*^9, {
+   3.858883448239192*^9, 3.8588835122790346`*^9}, {3.8588835656958723`*^9, 
+   3.8588835864776583`*^9}, {3.858883719896685*^9, 3.858883725620034*^9}},
+ CellLabel->
+  "Out[222]=",ExpressionUUID->"244582a2-0437-4e2b-9f89-b1bb54292a53"],
+
+Cell[BoxData["1"], "Output",
+ CellChangeTimes->{
+  3.858883077809939*^9, {3.858883135358399*^9, 3.858883178185755*^9}, {
+   3.8588833306073875`*^9, 3.8588833437254114`*^9}, 3.8588834023420444`*^9, {
+   3.858883448239192*^9, 3.8588835122790346`*^9}, {3.8588835656958723`*^9, 
+   3.8588835864776583`*^9}, {3.858883719896685*^9, 3.858883725672951*^9}},
+ CellLabel->
+  "Out[223]=",ExpressionUUID->"237aaf5d-0250-4acd-ab3c-2d0b5ae8957d"],
 
 Cell[BoxData[
- RowBox[{"graphUI", "[", 
-  RowBox[{"multivarf", ",", 
-   RowBox[{"{", 
-    RowBox[{"newx", ",", "newy", ",", "newz"}], "}"}]}], "]"}]], "Output",
- CellChangeTimes->{3.8588808344825277`*^9, 3.858881268035694*^9},
- CellLabel->"Out[27]=",ExpressionUUID->"62e73a5c-253b-4acf-96fb-ece1095881ed"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- TagBox[
-  StyleBox[
-   DynamicModuleBox[{$CellContext`newx$$ = $CellContext`newz, Typeset`show$$ =
-     True, Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
-    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
-    "\"untitled\"", Typeset`specs$$ = {{{
-       Hold[$CellContext`newx$$], $CellContext`newy, $CellContext`newz}}}, 
-    Typeset`size$$ = {204.8, {3., 10.}}, Typeset`update$$ = 0, 
-    Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
-    DynamicBox[Manipulate`ManipulateBoxes[
-     1, StandardForm, 
-      "Variables" :> {$CellContext`newx$$ = $CellContext`newy}, 
-      "ControllerVariables" :> {}, 
-      "OtherVariables" :> {
-       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
-        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
-        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
-         Typeset`skipInitDone$$}, 
-      "Body" :> $CellContext`multivarf[{$CellContext`newx$$, \
-$CellContext`newy, $CellContext`newz}], 
-      "Specifications" :> {{{$CellContext`newx$$, $CellContext`newy, \
-$CellContext`newz}}}, "Options" :> {}, "DefaultOptions" :> {}],
-     ImageSizeCache->{435., {35., 41.}},
-     SingleEvaluation->True],
-    Deinitialization:>None,
-    DynamicModuleValues:>{},
-    SynchronousInitialization->True,
-    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
-    UnsavedVariables:>{Typeset`initDone$$},
-    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
-   Deployed->True,
-   StripOnInput->False],
-  Manipulate`InterpretManipulate[1]]], "Input",
- CellChangeTimes->{3.8588808399746156`*^9},
- CellLabel->"In[16]:=",ExpressionUUID->"1f50b525-6e9c-40b0-a943-12c4caea496c"],
-
-Cell[BoxData[
- TagBox[
-  StyleBox[
-   DynamicModuleBox[{$CellContext`newx$$ = $CellContext`newz, Typeset`show$$ =
-     True, Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
-    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
-    "\"untitled\"", Typeset`specs$$ = {{{
-       Hold[$CellContext`newx$$], $CellContext`newz, $CellContext`newz}}}, 
-    Typeset`size$$ = {204.8, {3., 10.}}, Typeset`update$$ = 0, 
-    Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
-    DynamicBox[Manipulate`ManipulateBoxes[
-     1, StandardForm, 
-      "Variables" :> {$CellContext`newx$$ = $CellContext`newz}, 
-      "ControllerVariables" :> {}, 
-      "OtherVariables" :> {
-       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
-        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
-        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
-         Typeset`skipInitDone$$}, 
-      "Body" :> $CellContext`multivarf[{$CellContext`newx$$, \
-$CellContext`newy, $CellContext`newz}], 
-      "Specifications" :> {{{$CellContext`newx$$, $CellContext`newz, \
-$CellContext`newz}}}, "Options" :> {}, "DefaultOptions" :> {}],
-     ImageSizeCache->{435., {35., 41.}},
-     SingleEvaluation->True],
-    Deinitialization:>None,
-    DynamicModuleValues:>{},
-    SynchronousInitialization->True,
-    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
-    UnsavedVariables:>{Typeset`initDone$$},
-    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
-   Deployed->True,
-   StripOnInput->False],
-  Manipulate`InterpretManipulate[1]]], "Output",
- CellChangeTimes->{3.8588808400956087`*^9},
- CellLabel->"Out[16]=",ExpressionUUID->"082066ae-1a6c-42bb-a9c2-766d99b2e314"]
+ RowBox[{"{", 
+  RowBox[{"4", ",", "5"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.858883077809939*^9, {3.858883135358399*^9, 3.858883178185755*^9}, {
+   3.8588833306073875`*^9, 3.8588833437254114`*^9}, 3.8588834023420444`*^9, {
+   3.858883448239192*^9, 3.8588835122790346`*^9}, {3.8588835656958723`*^9, 
+   3.8588835864776583`*^9}, {3.858883719896685*^9, 3.858883725674946*^9}},
+ CellLabel->
+  "Out[224]=",ExpressionUUID->"b1659d86-2f1b-48ad-a904-1b5617a7b29f"]
 }, Open  ]]
 }, Open  ]]
 },
@@ -347,21 +365,20 @@ Notebook[{
 Cell[CellGroupData[{
 Cell[580, 22, 271, 6, 85, "Subtitle",ExpressionUUID->"90ca5ff2-6195-48f1-abf9-032cc37ebdce"],
 Cell[CellGroupData[{
-Cell[876, 32, 4126, 83, 400, "Input",ExpressionUUID->"2d5e39e4-5df1-42f0-b6d7-60c75cd1e4ac"],
-Cell[5005, 117, 208, 3, 32, "Output",ExpressionUUID->"ea309411-328b-4655-a7da-5e0f63d760f2"],
-Cell[5216, 122, 208, 3, 32, "Output",ExpressionUUID->"d76cc555-651e-4ae1-ab4d-fb5402046ae4"],
-Cell[5427, 127, 271, 3, 32, "Output",ExpressionUUID->"646414a0-5059-4499-a7e3-1e323ce61759"],
-Cell[5701, 132, 235, 3, 32, "Output",ExpressionUUID->"c825cc2c-8144-4f49-8e48-3c1cde32cd91"],
-Cell[5939, 137, 369, 5, 77, "Output",ExpressionUUID->"61174e02-ca53-47b4-9c46-0a50b901288c"]
+Cell[876, 32, 4534, 93, 458, "Input",ExpressionUUID->"2d5e39e4-5df1-42f0-b6d7-60c75cd1e4ac"],
+Cell[5413, 127, 454, 7, 53, "Output",ExpressionUUID->"1cafacaa-ec4a-446b-b548-8ef0221f14bf"],
+Cell[5870, 136, 336, 6, 32, "Output",ExpressionUUID->"09bd8f36-a510-41dc-92ae-a861e0f9aef1"],
+Cell[6209, 144, 338, 6, 32, "Output",ExpressionUUID->"5d0db874-48c4-4aeb-bb97-b07210e3642d"],
+Cell[6550, 152, 323, 5, 53, "Output",ExpressionUUID->"378f556f-fbba-4342-8793-0458c80a6d07"],
+Cell[6876, 159, 411, 7, 32, "Output",ExpressionUUID->"b73e25ae-7049-4533-bc35-f7b3d63af0af"],
+Cell[7290, 168, 365, 6, 32, "Output",ExpressionUUID->"6f4c2321-7e72-4cd4-93cf-e62d86fa1c22"],
+Cell[7658, 176, 506, 8, 53, "Output",ExpressionUUID->"c40c9d56-e77c-4867-961a-f3e8e6486af9"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6345, 147, 2292, 58, 244, "Input",ExpressionUUID->"50d2f76b-05c8-4bc6-a3ac-0841dde8cba0"],
-Cell[8640, 207, 1637, 33, 303, "Output",ExpressionUUID->"174a2d47-46a5-433c-8933-a4995a2203e5"],
-Cell[10280, 242, 305, 6, 32, "Output",ExpressionUUID->"62e73a5c-253b-4acf-96fb-ece1095881ed"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[10622, 253, 1724, 35, 91, InheritFromParent,ExpressionUUID->"1f50b525-6e9c-40b0-a943-12c4caea496c"],
-Cell[12349, 290, 1725, 35, 95, "Output",ExpressionUUID->"082066ae-1a6c-42bb-a9c2-766d99b2e314"]
+Cell[8201, 189, 3530, 91, 380, "Input",ExpressionUUID->"50d2f76b-05c8-4bc6-a3ac-0841dde8cba0"],
+Cell[11734, 282, 2015, 41, 305, "Output",ExpressionUUID->"244582a2-0437-4e2b-9f89-b1bb54292a53"],
+Cell[13752, 325, 432, 7, 32, "Output",ExpressionUUID->"237aaf5d-0250-4acd-ab3c-2d0b5ae8957d"],
+Cell[14187, 334, 477, 9, 81, "Output",ExpressionUUID->"b1659d86-2f1b-48ad-a904-1b5617a7b29f"]
 }, Open  ]]
 }, Open  ]]
 }
