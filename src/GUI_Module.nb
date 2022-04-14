@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     34008,        818]
-NotebookOptionsPosition[     32051,        779]
-NotebookOutlinePosition[     32452,        795]
-CellTagsIndexPosition[     32409,        792]
+NotebookDataLength[     35380,        846]
+NotebookOptionsPosition[     33423,        807]
+NotebookOutlinePosition[     33824,        823]
+CellTagsIndexPosition[     33781,        820]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -430,58 +430,80 @@ Cell[BoxData[{
    RowBox[{"{", 
     RowBox[{
      RowBox[{"{", 
-      RowBox[{"numAtoms", ",", 
-       RowBox[{"0.5", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"numAtoms", ",", 
+         RowBox[{"totalAtoms", "[", 
+          RowBox[{"length", ",", "width", ",", "depth"}], "]"}], ",", 
+         "\"\<Number of Atoms\>\""}], "}"}], ",", 
+       RowBox[{"0.1", 
         RowBox[{"totalAtoms", "[", 
          RowBox[{"length", ",", "width", ",", "depth"}], "]"}]}], ",", 
-       RowBox[{"2", 
+       RowBox[{"5", 
         RowBox[{"totalAtoms", "[", 
          RowBox[{"length", ",", "width", ",", "depth"}], "]"}]}]}], "}"}], 
-     ",", 
+     ",", "\[IndentingNewLine]", 
      RowBox[{"{", 
-      RowBox[{"numCollisions", ",", "50", ",", "1000"}], "}"}], ",", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+        "numCollisions", ",", "50", ",", 
+         "\"\<Number of Collisions Mapped\>\""}], "}"}], ",", "50", ",", 
+       "1000"}], "}"}], ",", "\[IndentingNewLine]", 
      RowBox[{"{", 
-      RowBox[{"length", ",", "1", ",", "10"}], "}"}], ",", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"length", ",", " ", "5", ",", " ", "\"\<Length of Box\>\""}], 
+        "}"}], ",", "1", ",", "10"}], "}"}], ",", 
      RowBox[{"{", 
-      RowBox[{"width", ",", "1", ",", "10"}], "}"}], ",", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"width", ",", "5", ",", " ", "\"\<Width of Box\>\""}], "}"}], 
+       ",", "1", ",", "10"}], "}"}], ",", 
      RowBox[{"{", 
-      RowBox[{"depth", ",", "1", ",", "10"}], "}"}]}], "}"}]}], 
-  "]"}]}], "Input",
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"depth", ",", "5", ",", "\"\<Depth of Box\>\""}], "}"}], ",", 
+       "1", ",", "10"}], "}"}]}], "}"}]}], "]"}]}], "Input",
  CellChangeTimes->{{3.858891446590454*^9, 3.8588915028842945`*^9}, {
   3.8588915834833603`*^9, 3.8588915854951878`*^9}, {3.858891633004709*^9, 
-  3.8588918579260225`*^9}},
+  3.8588918579260225`*^9}, {3.8588920204270864`*^9, 3.8588920643036203`*^9}, {
+  3.858892118304717*^9, 3.858892235179511*^9}},
  CellLabel->
-  "In[317]:=",ExpressionUUID->"2b2728eb-51db-4dd1-a7ae-78cc86e6d427"],
+  "In[341]:=",ExpressionUUID->"2b2728eb-51db-4dd1-a7ae-78cc86e6d427"],
 
 Cell[BoxData[
  TagBox[
   StyleBox[
-   DynamicModuleBox[{$CellContext`depth$$ = 7.75, $CellContext`length$$ = 
-    8.77, $CellContext`numAtoms$$ = 
-    2.762906062*^12, $CellContext`numCollisions$$ = 
-    804., $CellContext`width$$ = 4.76, Typeset`show$$ = True, 
+   DynamicModuleBox[{$CellContext`depth$$ = 1., $CellContext`length$$ = 
+    2.2199999999999998`, $CellContext`numAtoms$$ = 
+    3.9422760000000015`*^10, $CellContext`numCollisions$$ = 
+    50, $CellContext`width$$ = 1., Typeset`show$$ = True, 
     Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
     Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
-    "\"untitled\"", Typeset`specs$$ = {{
-      Hold[$CellContext`numAtoms$$], 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`numAtoms$$], 
+       10000000000 $CellContext`depth$$ $CellContext`length$$ \
+$CellContext`width$$, "Number of Atoms"}, 
       Dynamic[
-      5.*^9 $CellContext`depth$$ $CellContext`length$$ $CellContext`width$$], 
+      1.*^9 $CellContext`depth$$ $CellContext`length$$ $CellContext`width$$], 
       Dynamic[
-      20000000000 $CellContext`depth$$ $CellContext`length$$ \
-$CellContext`width$$]}, {
-      Hold[$CellContext`numCollisions$$], 50, 1000}, {
-      Hold[$CellContext`length$$], 1, 10}, {
-      Hold[$CellContext`width$$], 1, 10}, {
-      Hold[$CellContext`depth$$], 1, 10}}, Typeset`size$$ = {
-    444.40000000000003`, {186., 191.0554116076246}}, Typeset`update$$ = 0, 
-    Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
+      50000000000 $CellContext`depth$$ $CellContext`length$$ \
+$CellContext`width$$]}, {{
+       Hold[$CellContext`numCollisions$$], 50, "Number of Collisions Mapped"},
+       50, 1000}, {{
+       Hold[$CellContext`length$$], 5, "Length of Box"}, 1, 10}, {{
+       Hold[$CellContext`width$$], 5, "Width of Box"}, 1, 10}, {{
+       Hold[$CellContext`depth$$], 5, "Depth of Box"}, 1, 10}}, 
+    Typeset`size$$ = {451.6, {182., 186.20245070596536`}}, Typeset`update$$ = 
+    0, Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
     DynamicBox[Manipulate`ManipulateBoxes[
      1, StandardForm, 
-      "Variables" :> {$CellContext`depth$$ = 1, $CellContext`length$$ = 
-        1, $CellContext`numAtoms$$ = 
-        Dynamic[5.*^9 $CellContext`depth$$ $CellContext`length$$ \
-$CellContext`width$$], $CellContext`numCollisions$$ = 
-        50, $CellContext`width$$ = 1}, "ControllerVariables" :> {}, 
+      "Variables" :> {$CellContext`depth$$ = 5, $CellContext`length$$ = 
+        5, $CellContext`numAtoms$$ = 
+        10000000000 $CellContext`depth$$ $CellContext`length$$ \
+$CellContext`width$$, $CellContext`numCollisions$$ = 50, $CellContext`width$$ = 
+        5}, "ControllerVariables" :> {}, 
       "OtherVariables" :> {
        Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
         Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
@@ -490,17 +512,21 @@ $CellContext`width$$], $CellContext`numCollisions$$ =
       "Body" :> $CellContext`drawPath3D[{
         "Hydrogen", $CellContext`numAtoms$$, $CellContext`numCollisions$$, \
 $CellContext`length$$, $CellContext`width$$, $CellContext`depth$$}], 
-      "Specifications" :> {{$CellContext`numAtoms$$, 
+      "Specifications" :> {{{$CellContext`numAtoms$$, 
+          10000000000 $CellContext`depth$$ $CellContext`length$$ \
+$CellContext`width$$, "Number of Atoms"}, 
          Dynamic[
-         5.*^9 $CellContext`depth$$ $CellContext`length$$ \
+         1.*^9 $CellContext`depth$$ $CellContext`length$$ \
 $CellContext`width$$], 
          Dynamic[
-         20000000000 $CellContext`depth$$ $CellContext`length$$ \
-$CellContext`width$$]}, {$CellContext`numCollisions$$, 50, 
-         1000}, {$CellContext`length$$, 1, 10}, {$CellContext`width$$, 1, 
-         10}, {$CellContext`depth$$, 1, 10}}, "Options" :> {}, 
-      "DefaultOptions" :> {}],
-     ImageSizeCache->{760., {216., 222.}},
+         50000000000 $CellContext`depth$$ $CellContext`length$$ \
+$CellContext`width$$]}, {{$CellContext`numCollisions$$, 50, 
+          "Number of Collisions Mapped"}, 50, 
+         1000}, {{$CellContext`length$$, 5, "Length of Box"}, 1, 
+         10}, {{$CellContext`width$$, 5, "Width of Box"}, 1, 
+         10}, {{$CellContext`depth$$, 5, "Depth of Box"}, 1, 10}}, 
+      "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{826., {212., 218.}},
      SingleEvaluation->True],
     Deinitialization:>None,
     DynamicModuleValues:>{},
@@ -511,9 +537,11 @@ $CellContext`width$$]}, {$CellContext`numCollisions$$, 50,
    Deployed->True,
    StripOnInput->False],
   Manipulate`InterpretManipulate[1]]], "Output",
- CellChangeTimes->{{3.8588918611980267`*^9, 3.8588918902670145`*^9}},
+ CellChangeTimes->{{3.8588918611980267`*^9, 3.8588918902670145`*^9}, {
+  3.858892033246335*^9, 3.85889204293515*^9}, {3.8588921204579077`*^9, 
+  3.8588921524133635`*^9}, {3.858892194605968*^9, 3.8588922534844637`*^9}},
  CellLabel->
-  "Out[319]=",ExpressionUUID->"a15f9b5e-6677-4c74-9e6a-c7ebb633a423"]
+  "Out[343]=",ExpressionUUID->"f820a6dc-4bfc-438b-abc6-b370240a434a"]
 }, Open  ]]
 }, Open  ]],
 
@@ -807,17 +835,17 @@ Cell[7477, 184, 316, 6, 32, "Output",ExpressionUUID->"e0aca615-98f2-4520-ad02-b1
 Cell[7796, 192, 459, 8, 53, "Output",ExpressionUUID->"a29da74f-5e5d-4c1d-a021-10819c55cb3b"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[8292, 205, 10276, 248, 747, "Input",ExpressionUUID->"2b2728eb-51db-4dd1-a7ae-78cc86e6d427"],
-Cell[18571, 455, 2897, 60, 457, "Output",ExpressionUUID->"a15f9b5e-6677-4c74-9e6a-c7ebb633a423"]
+Cell[8292, 205, 11043, 267, 767, "Input",ExpressionUUID->"2b2728eb-51db-4dd1-a7ae-78cc86e6d427"],
+Cell[19338, 474, 3502, 69, 449, "Output",ExpressionUUID->"f820a6dc-4bfc-438b-abc6-b370240a434a"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[21517, 521, 1108, 17, 85, "Subtitle",ExpressionUUID->"50d2f76b-05c8-4bc6-a3ac-0841dde8cba0"],
-Cell[22628, 540, 3891, 99, 380, "Input",ExpressionUUID->"f9a0f108-f449-4f0a-bf02-9f8bb56e3eaf"],
+Cell[22889, 549, 1108, 17, 85, "Subtitle",ExpressionUUID->"50d2f76b-05c8-4bc6-a3ac-0841dde8cba0"],
+Cell[24000, 568, 3891, 99, 380, "Input",ExpressionUUID->"f9a0f108-f449-4f0a-bf02-9f8bb56e3eaf"],
 Cell[CellGroupData[{
-Cell[26544, 643, 1677, 50, 107, "Input",ExpressionUUID->"edf714a9-8b64-4afd-b777-fc19126abadb"],
-Cell[28224, 695, 1899, 39, 299, "Output",ExpressionUUID->"fbe2e4d2-f238-4381-9fcd-95f11e4dc435"],
-Cell[30126, 736, 1897, 39, 299, "Output",ExpressionUUID->"fbe58012-b4fb-4890-b7a1-b2b14fc5c6f9"]
+Cell[27916, 671, 1677, 50, 107, "Input",ExpressionUUID->"edf714a9-8b64-4afd-b777-fc19126abadb"],
+Cell[29596, 723, 1899, 39, 299, "Output",ExpressionUUID->"fbe2e4d2-f238-4381-9fcd-95f11e4dc435"],
+Cell[31498, 764, 1897, 39, 299, "Output",ExpressionUUID->"fbe58012-b4fb-4890-b7a1-b2b14fc5c6f9"]
 }, Open  ]]
 }, Open  ]]
 }
