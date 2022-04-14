@@ -3,3 +3,4 @@
 3. Incorporate a simple GUI
 
 4. Make a merge conflict
+5. Try the merge again
