@@ -1,3 +1,5 @@
 1. Finish git tutorial
 2. Begin coding for the overall plot
 3. Incorporate a simple GUI
+
+4. Make a merge conflict
